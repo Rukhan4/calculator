@@ -51,7 +51,7 @@ body {
     border-style: inset;
     border-radius: 5px;
     height: 500px;
-    background-color: rgb(230, 161, 34);
+    background-color: rgb(80, 74, 62);
 }
 
 .model {
@@ -106,7 +106,7 @@ body {
 }
 
 .clear {
-    background-color: rgb(255, 98, 98);
+    background-color: rgb(255, 141, 141);
 }
 
 .clear:hover {
@@ -114,11 +114,11 @@ body {
 }
 
 .clear:active {
-    background-color: rgb(255, 79, 79);
+    background-color: rgb(209, 98, 98);
 }
 
 .del {
-    background-color: rgb(173, 119, 245);
+    background-color: rgb(195, 152, 252);
 }
 
 .del:hover {
@@ -126,7 +126,7 @@ body {
 }
 
 .del:active {
-    background-color: rgb(151, 95, 255);
+    background-color: rgb(145, 109, 212);
 }
 
 .footer {
