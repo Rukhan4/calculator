@@ -21,6 +21,29 @@ body {
     background-color: #aaa;
 }
 
+.accessory {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.brand {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif
+}
+
+.battery {
+    border: 3px solid;
+    height: 30px;
+    width: 103px;
+    background-color: rgb(230, 161, 34);
+}
+
+.model {
+    font-size: 25px;
+}
+
 .screen {
     padding: 10px 20px;
     border: 2px solid;
@@ -90,4 +113,16 @@ body {
 
 .del:active {
     background-color: rgb(151, 95, 255);
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
 }
