@@ -6,7 +6,7 @@ let multiply = (a, b) => a * b;
 
 let divide = (a, b) => a / b;
 
-export function operate(symbol, a, b) {
+function operate(symbol, a, b) {
     switch (symbol) {
         case "+":
             return add(a, b);
