@@ -1,10 +1,3 @@
-import { operate } from './ops.js';
-
-// console.log(operate('-', 3, 5));
-// console.log(operate('*', 3, 5));
-// console.log(operate('/', 3, 5));
-// console.log(operate('+', 3, 5));
-
 let firstValue = "";
 let secondValue = "";
 let currentOperation = null;
@@ -19,39 +12,56 @@ const pointBtn = document.getElementById('pointBtn')
 const lastOperationScreen = document.getElementById("lastOperationScreen")
 const currentOperationScreen = document.getElementById("currentOperationScreen")
 
+equalBtn.addEventListener('click', calculator);
+clearBtn.addEventListener('click', clear);
+deleteBtn.addEventListener('click', deleteNumber);
+pointBtn.addEventListener('click', placePoint);
+
+
+// FUNCTIONS TO PERFORM ACCESSORY OPERATIONS //
 function resetScreen() {
     currentOperationScreen.textContent = ''
-    shouldResetScreen = false
-}
-
-function updateNumber(num) {
-    if (currentOperationScreen.textContent === "0" || resetScreenChoice) {
-        resetScreen()
-    }
-    currentOperationScreen.textContent += num;
+    shouldResetScreen = false;
 }
 
 function clear() {
-    currentOperationScreen.textContent = "0"
-    lastOperationScreen.textContent = ""
-    firstValue = ""
-    secondValue = ""
-    currentOperation = null
+    currentOperationScreen.textContent = "0";
+    lastOperationScreen.textContent = "";
+    firstValue = "";
+    secondValue = "";
+    currentOperation = null;
 }
 
 function placePoint() {
     if (resetScreenChoice) {
-        resetScreen()
+        resetScreen();
     }
     if (currentOperationScreen.textContent === "") {
-        currentOperationScreen.textContent = "0"
+        currentOperationScreen.textContent = "0";
     }
     if (!currentOperationScreen.textContent.includes('.')) {
-        currentOperationScreen.textContent += '.'
+        currentOperationScreen.textContent += '.';
     }
 }
 
 function deleteNumber() {
-    currentOperationScreen.textContent =
-        currentOperationScreen.textContent.toString().slice(0, -1)
+    if (currentOperationScreen.textContent.length === 1) {
+        currentOperationScreen.textContent = "0";
+    } else {
+        currentOperationScreen.textContent =
+            currentOperationScreen.textContent.toString().slice(0, -1);
+    }
 }
+
+// FUNCTIONS TO PERFORM ARITHMETIC OPERATIONS //
+
+function updateNumber(num) {
+    if (currentOperationScreen.textContent === "0" || resetScreenChoice) {
+        currentOperationScreen.textContent = num;
+    } else {
+        currentOperationScreen.textContent += num;
+    }
+}
+
+numberBtns.forEach((button) =>
+    button.addEventListener('click', () => updateNumber(button.textContent)));
