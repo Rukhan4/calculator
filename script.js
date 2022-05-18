@@ -44,7 +44,6 @@ function placePoint() {
     }
     if (!currentOperationScreen.textContent.includes('.')) {
         currentOperationScreen.textContent += '.';
-        firstValue += '.';
     }
 }
 
