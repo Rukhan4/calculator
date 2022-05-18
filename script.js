@@ -60,7 +60,7 @@ function updateNumber(num) {
     if (currentOperationScreen.textContent === "0") {
         currentOperationScreen.textContent = num;
     } else if (currentOperationScreen.textContent == firstValue) {
-        console.log('first check');
+        //console.log('first check');
         currentOperationScreen.textContent = num;
     }
     else {
@@ -74,7 +74,7 @@ function setOperation(operator) {
         calculate();
     }
     firstValue = currentOperationScreen.textContent;
-    console.log('second check');
+    //console.log('second check');
     lastOperationScreen.textContent = `${firstValue} ${operator}`;
     currentOperation = operator;
     resetScreenChoice = false;
