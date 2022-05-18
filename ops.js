@@ -10,11 +10,11 @@ function operate(symbol, a, b) {
     switch (symbol) {
         case "+":
             return add(a, b);
-        case "-":
+        case "−":
             return subtract(a, b);
-        case "*":
+        case "×":
             return multiply(a, b);
-        case "/":
+        case "÷":
             return divide(a, b);
         default:
             return null;
