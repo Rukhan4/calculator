@@ -1,7 +1,6 @@
 let firstValue = "";
 let secondValue = "";
 let currentOperation = null;
-let resetScreenChoice = false;
 let startCalc = false;
 
 
@@ -22,11 +21,6 @@ pointBtn.addEventListener('click', placePoint);
 
 // FUNCTIONS TO PERFORM ACCESSORY OPERATIONS //
 
-function resetScreen() {
-    currentOperationScreen.textContent = ''
-    resetScreenChoice = false;
-}
-
 function clear() {
     currentOperationScreen.textContent = "0";
     lastOperationScreen.textContent = "";
@@ -36,9 +30,6 @@ function clear() {
 }
 
 function placePoint() {
-    if (resetScreenChoice) {
-        resetScreen();
-    }
     if (currentOperationScreen.textContent === "") {
         currentOperationScreen.textContent = "0";
     }
@@ -66,11 +57,13 @@ operationBtns.forEach((button) =>
     button.addEventListener('click', () => setOperation(button.textContent)));
 
 function updateNumber(num) {
-    if (resetScreenChoice) {
-        resetScreen();
-    } else if (currentOperationScreen.textContent === "0") {
+    if (currentOperationScreen.textContent === "0") {
         currentOperationScreen.textContent = num;
-    } else {
+    } else if (currentOperationScreen.textContent == firstValue) {
+        console.log('first check');
+        currentOperationScreen.textContent = num;
+    }
+    else {
         currentOperationScreen.textContent += num;
     }
 }
@@ -81,9 +74,10 @@ function setOperation(operator) {
         calculate();
     }
     firstValue = currentOperationScreen.textContent;
+    console.log('second check');
     lastOperationScreen.textContent = `${firstValue} ${operator}`;
     currentOperation = operator;
-    resetScreenChoice = true;
+    resetScreenChoice = false;
 
 }
 
