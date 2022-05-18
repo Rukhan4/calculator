@@ -83,8 +83,8 @@ function round(num) {
 function calculate() {
     if (currentOperation === '÷' &&
         currentOperationScreen.textContent === '0') {
-        alert("Really?");
-        clear();
+        lastOperationScreen.textContent = "Trying to divide by 0?";
+        currentOperationScreen.textContent = "🤡";
     } else {
 
         if (currentOperation === null) {
