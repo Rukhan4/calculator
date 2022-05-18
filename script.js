@@ -1,8 +1,6 @@
 let firstValue = "";
 let secondValue = "";
 let currentOperation = null;
-let startCalc = false;
-
 
 const numberBtns = document.querySelectorAll('[data-number]');
 const operationBtns = document.querySelectorAll('[data-operator]');
@@ -44,7 +42,7 @@ function deleteNumber() {
     } else {
         currentOperationScreen.textContent =
             currentOperationScreen.textContent.toString().slice(0, -1);
-        firstValue = currentOperationScreen.textContent;
+        //firstValue = currentOperationScreen.textContent;
     }
 }
 
@@ -76,8 +74,6 @@ function setOperation(operator) {
     //console.log('second check');
     lastOperationScreen.textContent = `${firstValue} ${operator}`;
     currentOperation = operator;
-    resetScreenChoice = false;
-
 }
 
 function round(num) {
@@ -85,7 +81,8 @@ function round(num) {
 }
 
 function calculate() {
-    if (currentOperation === '÷' && currentOperationScreen.textContent === '0') {
+    if (currentOperation === '÷' &&
+        currentOperationScreen.textContent === '0') {
         alert("Really?");
         clear();
     } else {
