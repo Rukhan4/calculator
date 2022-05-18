@@ -1,0 +1,28 @@
+1) enter numbers
+
+2) click operation (operator)
+(firstValue) = currentOperationScreen
+lastOperationScreen = (firstValue) Operator
+
+3) enter numbers
+(secondValue) = currentOperationScreen
+currentOperationScreen shows (secondValue)
+
+4) click =
+lastOperationScreen: "firstValue operator SecondValue ="
+currentOperationScreen updates calculation
+
+5) click another operation (operator)
+(firstValue) = currentOperationScreen
+lastOperationScreen = (firstValue) (operator)
+
+6) enter numbers
+lastOperationScreen = "firstValue operator SecondValue ="
+
+
+
+clear();
+
+--- add is adding strings FIXED
+--- after pressing operator, currentOperationScreen isnt immediately updating
+--- extra . after using something like: 5.5 operator 6.2

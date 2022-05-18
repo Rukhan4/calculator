@@ -77,12 +77,11 @@ function updateNumber(num) {
 }
 
 function setOperation(operator) {
-    console.log(operator);
+
     if (currentOperation !== null) {
         calculate();
     }
     firstValue = currentOperationScreen.textContent;
-    console.log(firstValue);
     lastOperationScreen.textContent = `${firstValue} ${operator}`;
     currentOperation = operator;
     resetScreenChoice = true;
@@ -95,10 +94,10 @@ function calculate() {
         clear();
     } else {
         secondValue = currentOperationScreen.textContent;
-        console.log(secondValue);
         let result = operate(currentOperation, firstValue, secondValue);
         currentOperationScreen.textContent = result;
-        lastOperationScreen.textContent = `${firstValue} ${currentOperation} ${secondValue} = ${result}`;
+        lastOperationScreen.textContent =
+            `${firstValue} ${currentOperation} ${secondValue} = ${result}`;
         firstValue = result;
         currentOperation = null;
     }
