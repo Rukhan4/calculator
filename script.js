@@ -86,6 +86,11 @@ function calculate() {
         alert("Really?");
         clear();
     } else {
+
+        if (currentOperation === null) {
+            //console.log("error");
+            currentOperation = lastOperationScreen.textContent.split(' ')[1];
+        }
         secondValue = currentOperationScreen.textContent;
         let result = round(operate(currentOperation, firstValue, secondValue));
         currentOperationScreen.textContent = result;
