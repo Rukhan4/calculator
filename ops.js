@@ -1,4 +1,4 @@
-let add = (a, b) => a + b;
+let add = (a, b) => Number(a) + Number(b);
 
 let subtract = (a, b) => a - b;
 
