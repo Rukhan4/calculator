@@ -69,7 +69,6 @@ function updateNumber(num) {
 }
 
 function setOperation(operator) {
-
     if (currentOperation !== null) {
         calculate();
     }
@@ -81,13 +80,17 @@ function setOperation(operator) {
 
 }
 
+function round(num) {
+    return Math.round(num * 1000) / 1000;
+}
+
 function calculate() {
     if (currentOperation === '÷' && currentOperationScreen.textContent === '0') {
         alert("Really?");
         clear();
     } else {
         secondValue = currentOperationScreen.textContent;
-        let result = operate(currentOperation, firstValue, secondValue);
+        let result = round(operate(currentOperation, firstValue, secondValue));
         currentOperationScreen.textContent = result;
         lastOperationScreen.textContent =
             `${firstValue} ${currentOperation} ${secondValue} = ${result}`;
